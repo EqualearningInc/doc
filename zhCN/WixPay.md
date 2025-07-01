@@ -18,7 +18,7 @@ WixPay接口用于处理来自Wix平台的支付订单提交。该接口支持�
 接口使用URL参数中的`signature`进行认证，该signature来源于以下URL中的token参数：
 
 ```
-https://www.amazinggraceinstitute.org/pricing-plans/list?token=*********
+https://www.amazinggraceinstitute.org/pricing-plans/list?token=ZNwiuMznIQYRAhX8iZWjvDuYgEw-CwoK0-eyXgLm4pJk8ERC35lhwF5h7YDbj_Ao1joEMwYdXelW-QRhNSTJS5WAeBDEn5t-VlPNlkJJkE5TgCwRJSRz5Kl1Kcr7XICZyX2RFMD9189wxMVfjyYnue12o2CNaJVgCf2KJYYI1iczska-t6dV6NBbxhnGl4afjV6DStS6vwXWRTNDBy1rstZ2m_0HvRDBWhRpkLkYa65fA7zJaNZiYBgtQbXQFXefVCnD-Y0gCAAlp7tfJMilVkwBY9MVpla4dzV5TT1aBMn8EVAGezBpJ_taxM25AwGnCzXYS9RShOcPffpSKqyY1WibckFjRizuRNES8USMAYpbxDi3H_q365heYUIZHhKTCfZz3u0erAUu6Fny5qb3nrm4q-u214zhe_N-NAqacz5Y31-jgVXXrcuYbiG8BodaP7a7tgR1whHC-tkdj8ZOgP7qKrlwfGaL-2wdR2j9B_osMggmZHTeuYr0Fv53laR32W0ULbkrqlWxl6ArqTAPkAGpA7_UayaRfal3E4VUjGfVOIsXrdkOdci4DymxGQbEdTyYdzifFR8Qsyl_vxE6gLjUr0XkgL-MUHn50jAvY622K8DSuMXPfC-bW4RqGInY1o-vHdFrqcrZoHPOeLuX5d8X4Y1Yj-LJro7iN15A_9g
 ```
 
 ### 认证流程
@@ -31,7 +31,7 @@ https://www.amazinggraceinstitute.org/pricing-plans/list?token=*********
 
 ```javascript
 // 从Wix页面URL中提取token
-const wixUrl = "https://www.amazinggraceinstitute.org/pricing-plans/list?token=abc123def456";
+const wixUrl = "https://www.amazinggraceinstitute.org/pricing-plans/list?token=ZNwiuMznIQYRAhX8iZWjvDuYgEw-CwoK0-eyXgLm4pJk8ERC35lhwF5h7YDbj_Ao1joEMwYdXelW-QRhNSTJS5WAeBDEn5t-VlPNlkJJkE5TgCwRJSRz5Kl1Kcr7XICZyX2RFMD9189wxMVfjyYnue12o2CNaJVgCf2KJYYI1iczska-t6dV6NBbxhnGl4afjV6DStS6vwXWRTNDBy1rstZ2m_0HvRDBWhRpkLkYa65fA7zJaNZiYBgtQbXQFXefVCnD-Y0gCAAlp7tfJMilVkwBY9MVpla4dzV5TT1aBMn8EVAGezBpJ_taxM25AwGnCzXYS9RShOcPffpSKqyY1WibckFjRizuRNES8USMAYpbxDi3H_q365heYUIZHhKTCfZz3u0erAUu6Fny5qb3nrm4q-u214zhe_N-NAqacz5Y31-jgVXXrcuYbiG8BodaP7a7tgR1whHC-tkdj8ZOgP7qKrlwfGaL-2wdR2j9B_osMggmZHTeuYr0Fv53laR32W0ULbkrqlWxl6ArqTAPkAGpA7_UayaRfal3E4VUjGfVOIsXrdkOdci4DymxGQbEdTyYdzifFR8Qsyl_vxE6gLjUr0XkgL-MUHn50jAvY622K8DSuMXPfC-bW4RqGInY1o-vHdFrqcrZoHPOeLuX5d8X4Y1Yj-LJro7iN15A_9g";
 const urlParams = new URLSearchParams(wixUrl.split('?')[1]);
 const token = urlParams.get('token');
 
@@ -43,9 +43,9 @@ const apiUrl = `/api/wixPay/submitOrder?signature=${token}`;
 
 ### URL参数
 
-| 参数名    | 类型   | 必填 | 说明                                    |
-| --------- | ------ | ---- | --------------------------------------- |
-| signature | string | 是   | 认证签名，来源于Wix页面URL中的token参数 |
+| 参数名    | 类型   | 必填 | 说明                                                         |
+| --------- | ------ | ---- | ------------------------------------------------------------ |
+| signature | string | 是   | 认证签名，来源于Wix页面URL中的token参数<br />测试用户的token: ZNwiuMznIQYRAhX8iZWjvDuYgEw-CwoK0-eyXgLm4pJk8ERC35lhwF5h7YDbj_Ao1joEMwYdXelW-QRhNSTJS5WAeBDEn5t-VlPNlkJJkE5TgCwRJSRz5Kl1Kcr7XICZyX2RFMD9189wxMVfjyYnue12o2CNaJVgCf2KJYYI1iczska-t6dV6NBbxhnGl4afjV6DStS6vwXWRTNDBy1rstZ2m_0HvRDBWhRpkLkYa65fA7zJaNZiYBgtQbXQFXefVCnD-Y0gCAAlp7tfJMilVkwBY9MVpla4dzV5TT1aBMn8EVAGezBpJ_taxM25AwGnCzXYS9RShOcPffpSKqyY1WibckFjRizuRNES8USMAYpbxDi3H_q365heYUIZHhKTCfZz3u0erAUu6Fny5qb3nrm4q-u214zhe_N-NAqacz5Y31-jgVXXrcuYbiG8BodaP7a7tgR1whHC-tkdj8ZOgP7qKrlwfGaL-2wdR2j9B_osMggmZHTeuYr0Fv53laR32W0ULbkrqlWxl6ArqTAPkAGpA7_UayaRfal3E4VUjGfVOIsXrdkOdci4DymxGQbEdTyYdzifFR8Qsyl_vxE6gLjUr0XkgL-MUHn50jAvY622K8DSuMXPfC-bW4RqGInY1o-vHdFrqcrZoHPOeLuX5d8X4Y1Yj-LJro7iN15A_9g |
 
 ### 请求体参数
 
@@ -82,7 +82,7 @@ const apiUrl = `/api/wixPay/submitOrder?signature=${token}`;
 // 提交WixPay订单
 async function submitWixPayOrder(productId, paymentId, signature) {
     try {
-        const response = await fetch(`/api/wixPay/submitOrder?signature=${signature}`, {
+        const response = await fetch(`https://staging.equalearning.net/api/wixPay/submitOrder?signature=${signature}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
