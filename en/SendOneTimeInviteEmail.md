@@ -20,7 +20,7 @@
 
 | Field Name | Type | Required | Description |
 | ---------- | ---- | -------- | ----------- |
-| email | string | Yes | Recipient email address (e.g., example@qq.com) |
+| email | string | Yes | Recipient email address (e.g., example@outlook.com) |
 | userDisplayName | string | No | Display name of the user to be invited |
 | schoolId | Guid | Yes | School ID (UUID format) |
 | classId | Guid | Yes | Class ID (UUID format) |
