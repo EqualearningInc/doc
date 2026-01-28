@@ -22,8 +22,8 @@
 | ---------- | ---- | -------- | ----------- |
 | email | string | Yes | Recipient email address (e.g., example@outlook.com) |
 | userDisplayName | string | No | Display name of the user to be invited |
-| schoolId | Guid | Yes | School ID (UUID format) |
-| classId | Guid | Yes | Class ID (UUID format) |
+| schoolId | Guid | Pending | School ID (UUID format)(Either schoolId or classId is required. If pass in both of them, make sure they are matched.) |
+| classId | Guid | Pending | Class ID (UUID format)(Either schoolId or classId is required. If pass in both of them, make sure they are matched.) |
 
 ## 4. Authentication
 
