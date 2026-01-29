@@ -12,7 +12,8 @@
   "email": "student@example.com",
   "userDisplayName": "John Doe",
   "schoolId": "00000000-0000-0000-0000-000000000000",
-  "classId": "11111111-1111-1111-1111-111111111111"
+  "classId": "11111111-1111-1111-1111-111111111111",
+  "paymentId": "222222222"
 }
 ```
 
@@ -24,6 +25,7 @@
 | userDisplayName | string | No | Display name of the user to be invited |
 | schoolId | Guid | Yes | School ID (UUID format) |
 | classId | Guid | No | Class ID (UUID format)(If not provided, user will only be registered into school, not to any classes.) |
+| paymentId | string | No | Payment ID |
 
 ## 4. Authentication
 
